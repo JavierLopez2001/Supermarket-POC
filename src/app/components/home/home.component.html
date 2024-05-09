@@ -1,0 +1,39 @@
+<app-search></app-search>
+<app-not-found
+  *ngIf="!loading"
+  [visible]="!items || items.length <= 0"
+  resetLinkText="Reset search"
+></app-not-found>
+<div *ngIf="loading" class="loader">
+  <mat-spinner ></mat-spinner>
+</div>
+<ul>
+  <li *ngFor="let item of items">
+    <a>
+      <img routerLink="/product/{{ item.id }}" src="{{ item.image }}" alt="" />
+      <div class="content">
+        <div class="name">
+          {{ item.name }}
+        </div>
+        <span class="favorite" [ngClass]="{ not: !item.favorite }" (click)="changeFavorite(item)"> ❤ </span>
+        <div class="product-item-footer">
+          <div class="origins">
+            <span >
+              {{ item.origin }}
+            </span>
+          </div>
+          <div class="cook-time">
+            <span>🕑{{ item.time }}</span>
+          </div>
+        </div>
+        <div class="price">
+          <span>
+            {{ item.price | currency }}
+          </span>
+        </div>
+
+        <mat-icon class="delete" (click)="deleteItem(item.id)">delete</mat-icon>
+      </div>
+    </a>
+  </li>
+</ul>

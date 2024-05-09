@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "7",
+      "name": "Vegetables pizza",
+      "price": "3.45",
+      "favorite": true,
+      "time": "10-20",
+      "origin": "Italy",
+      "image": "https://media.istockphoto.com/id/842082336/photo/homemade-veggie-pizza-with-mushrooms-peppers.jpg?s=612x612&w=0&k=20&c=op1vZnGjlB_c3w6Z-ohPo0wn4QveujVKZu4vTZCOWnc="
+    },
+    {
+      "id": "5660",
+      "name": "Cheeseburger",
+      "price": "8",
+      "favorite": true,
+      "time": "3-5",
+      "origin": "Hamburg",
+      "image": "https://media.istockphoto.com/id/617364554/photo/hamburger-with-fries.jpg?s=612x612&w=0&k=20&c=t8fMIRewNFRU7YSMNWIx2axoyZNjsh0cxHM4vYMALf8="
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+<app-not-found
+  [visible]="!product"
+  notFoundMessage="Product not found"
+  resetLinkText="Back to Homepage"
+></app-not-found>
+
+<div *ngIf="product" class="container">
+  <div class="image">
+    <img src="{{ product.image }}" alt="{{ product.name }}" />
+    <mat-form-field *ngIf="isEditing" class="image-link">
+      <input
+        matInput
+        [(ngModel)]="product.image"
+        placeholder="Link de la imagen"
+      />
+    </mat-form-field>
+  </div>
+  <div class="details">
+    <div class="header">
+      <span class="name" *ngIf="!isEditing">
+        {{ product.name }}
+      </span>
+      <mat-form-field *ngIf="isEditing" class="name">
+        <input
+          matInput
+          [(ngModel)]="product.name"
+          placeholder="Nombre del producto"
+        />
+      </mat-form-field>
+      <span class="favorite" *ngIf="!isEditing" [ngClass]="{ not: !product.favorite }" (click)="changeFavorite(product)"> ❤ </span>
+    </div>
+    <div class="origins">
+      <span>
+        Origin: {{product.origin}}
+      </span>
+      <mat-form-field *ngIf="isEditing" class="origin-input">
+        <input
+          matInput
+          [(ngModel)]="product.origin"
+          placeholder="Origin country"
+        />
+      </mat-form-field>
+    </div>
+    <div class="cook-time">
+      <span>
+        🕑Time to cook about <strong>{{product.time}}</strong> minutes
+      </span>
+      <mat-form-field *ngIf="isEditing" class="time-input">
+        <input
+          matInput
+          [(ngModel)]="product.time"
+          placeholder="Time to cook"
+        />
+      </mat-form-field>
+    </div>
+    <div class="price">
+      <span *ngIf="!isEditing">{{ product.price | currency }}</span>
+      <mat-form-field *ngIf="isEditing" class="price-input">
+        <mat-icon matPrefix>attach_money</mat-icon>
+        <input
+          matInput
+          [formControl]="priceControl"
+          [(ngModel)]="product.price"
+          placeholder="Precio del producto"
+        />
+        <mat-error *ngIf="priceControl.invalid && priceControl.touched">
+          Por favor, ingrese un valor válido.
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <button *ngIf="!isEditing" (click)="editProduct()">
+      Edit product <mat-icon class="edit-icon">edit</mat-icon>
+    </button>
+    <button *ngIf="isEditing" (click)="saveChanges()">
+      Save changes <mat-icon class="save-icon">save</mat-icon>
+    </button>
+  </div>
+</div>

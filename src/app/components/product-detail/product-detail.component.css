@@ -1,0 +1,148 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 3rem;
+}
+
+.container > * {
+  min-width: 25rem;
+  max-width: 45rem;
+}
+
+.image {
+  flex: 1 0;
+  text-align: center;
+  vertical-align: middle;
+  height: 45rem;
+  margin: 1rem;
+}
+
+img {
+  border: 1px solid darkgray;
+  border-radius: 3rem;
+  margin: 1rem;
+  height: 30rem;
+  object-fit: cover;
+  max-width: 40rem;
+}
+
+.image-link {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.details {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1 0;
+  border-radius: 3rem;
+  padding: 2rem;
+  color: black;
+  margin-left: 1rem;
+}
+
+.details .header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details .name {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 100%;
+}
+
+.details .favorite{
+  color: #e72929;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.details .favorite.not{
+  color: gray;
+}
+
+.details .origins{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.details .origins > span{
+  padding:.5rem;
+  font-size:1.2rem;
+  margin:.5rem .5rem .5rem 0;
+  border-radius: 2rem;
+  background-color: aliceblue;
+}
+
+.origin-input{
+  flex-grow: 1;
+  font-size: 1.2rem;
+}
+
+.details .cook-time{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.details .cook-time span{
+  padding: .6rem 2rem .6rem 0;
+  border-radius: 10rem;
+  font-size: 1.3rem;
+}
+
+.time-input {
+  flex-grow: 1;
+  font-size: 1.3rem;
+}
+
+.details .price {
+  font-size: 1.8rem;
+  margin: 2rem 2rem 2rem 0;
+  color: green;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.details .price::before {
+  content: "Price:";
+  color: darkgray;
+}
+
+.price-input {
+  width: 100%;
+  flex-grow: 1;
+  font-size: 1.8rem;
+}
+
+.price-input input {
+  color: green;
+}
+
+.details button {
+  color: white;
+  background-color: #e72929;
+  border: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 10rem;
+  outline: none;
+}
+
+.details button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.edit-icon,
+.save-icon {
+  vertical-align: middle;
+  margin-top: -0.5%;
+}
