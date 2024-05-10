@@ -4,7 +4,7 @@
       "id": "7",
       "name": "Vegetables pizza",
       "price": "3.45",
-      "favorite": true,
+      "favorite": false,
       "time": "10-20",
       "origin": "Italy",
       "image": "https://media.istockphoto.com/id/842082336/photo/homemade-veggie-pizza-with-mushrooms-peppers.jpg?s=612x612&w=0&k=20&c=op1vZnGjlB_c3w6Z-ohPo0wn4QveujVKZu4vTZCOWnc="

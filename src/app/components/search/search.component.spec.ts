@@ -19,8 +19,8 @@ describe('SearchComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      declarations: [ SearchComponent ],
-      imports:[
+      declarations: [SearchComponent],
+      imports: [
         MatInputModule,
         FormsModule
       ],
@@ -29,7 +29,7 @@ describe('SearchComponent', () => {
         { provide: ActivatedRoute, useValue: activatedRouteMock },
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -27,12 +27,17 @@
           placeholder="Nombre del producto"
         />
       </mat-form-field>
-      <span class="favorite" *ngIf="!isEditing" [ngClass]="{ not: !product.favorite }" (click)="changeFavorite(product)"> ❤ </span>
+      <span
+        class="favorite"
+        *ngIf="!isEditing"
+        [ngClass]="{ not: !product.favorite }"
+        (click)="changeFavorite(product)"
+      >
+        ❤
+      </span>
     </div>
     <div class="origins">
-      <span>
-        Origin: {{product.origin}}
-      </span>
+      <span> Origin: {{ product.origin }} </span>
       <mat-form-field *ngIf="isEditing" class="origin-input">
         <input
           matInput
@@ -43,14 +48,10 @@
     </div>
     <div class="cook-time">
       <span>
-        🕑Time to cook about <strong>{{product.time}}</strong> minutes
+        🕑Time to cook about <strong>{{ product.time }}</strong> minutes
       </span>
       <mat-form-field *ngIf="isEditing" class="time-input">
-        <input
-          matInput
-          [(ngModel)]="product.time"
-          placeholder="Time to cook"
-        />
+        <input matInput [(ngModel)]="product.time" placeholder="Time to cook" />
       </mat-form-field>
     </div>
     <div class="price">

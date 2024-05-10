@@ -27,7 +27,7 @@ export class AddProductDialogComponent {
     if (!this.product || this.product.name === '' || this.product.price === 0 || this.product.origin === '' || this.product.time === '' || this.product.image === '') {
       this.snackBar.showSnackBar("There are invalid fields")
       return
-    }else{
+    } else {
       this.dialogRef.close(this.product);
     }
   }

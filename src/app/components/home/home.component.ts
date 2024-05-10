@@ -13,10 +13,10 @@ export class HomeComponent {
   items: Product[] = [];
   loading = true;
 
-  constructor(private products: ProductsService, private route:ActivatedRoute) {
+  constructor(private products: ProductsService, private route: ActivatedRoute) {
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.loadData().then(() => {
       this.loading = false;
     });
@@ -24,14 +24,14 @@ export class HomeComponent {
 
   async loadData() {
     return new Promise<void>((resolve) => {
-      this.route.params.subscribe(params=>{
-        if(params['searchItem']){
-          this.products.getAll().subscribe(data=>{
+      this.route.params.subscribe(params => {
+        if (params['searchItem']) {
+          this.products.getAll().subscribe(data => {
             this.items = data.filter(product => product.name.toLowerCase().includes(params['searchItem'].toLowerCase()));
             resolve();
           })
-        }else{
-          this.products.getAll().subscribe(data=>{
+        } else {
+          this.products.getAll().subscribe(data => {
             this.items = data;
             resolve();
           })
@@ -45,7 +45,7 @@ export class HomeComponent {
     });
   }
 
-  changeFavorite(item: Product){
+  changeFavorite(item: Product) {
     item.favorite = !item.favorite
     this.products.editProduct(item.id, item).subscribe(() => {
     });
@@ -53,5 +53,5 @@ export class HomeComponent {
 
   deleteItem(id: number) {
     this.products.delete(id).subscribe();
- }
+  }
 }

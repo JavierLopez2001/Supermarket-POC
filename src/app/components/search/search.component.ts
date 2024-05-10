@@ -20,8 +20,8 @@ export class SearchComponent {
     })
   }
 
-  search():void{
-    if(this.searchItem){
+  search(): void {
+    if (this.searchItem) {
       this.router.navigateByUrl("/search/" + this.searchItem)
     }
   }

@@ -5,7 +5,6 @@ import { HeaderComponent } from './header.component';
 import { ProductsService } from 'src/app/shared/services/products.service';
 import { AddProductDialogComponent } from '../../../components/add-product-dialog/add-product-dialog.component';
 
-// Mock del servicio ProductsService
 class MockProductsService {
   addProduct = jasmine.createSpy('addProduct').and.returnValue(of(true));
 }
@@ -19,13 +18,13 @@ describe('HeaderComponent', () => {
     const dialogSpy = jasmine.createSpyObj('MatDialog', ['open']);
 
     await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ],
+      declarations: [HeaderComponent],
       providers: [
         { provide: MatDialog, useValue: dialogSpy },
         { provide: ProductsService, useClass: MockProductsService }
       ]
     })
-  .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

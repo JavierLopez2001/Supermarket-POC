@@ -5,7 +5,7 @@
   resetLinkText="Reset search"
 ></app-not-found>
 <div *ngIf="loading" class="loader">
-  <mat-spinner ></mat-spinner>
+  <mat-spinner></mat-spinner>
 </div>
 <ul>
   <li *ngFor="let item of items">
@@ -15,10 +15,16 @@
         <div class="name">
           {{ item.name }}
         </div>
-        <span class="favorite" [ngClass]="{ not: !item.favorite }" (click)="changeFavorite(item)"> ❤ </span>
+        <span
+          class="favorite"
+          [ngClass]="{ not: !item.favorite }"
+          (click)="changeFavorite(item)"
+        >
+          ❤
+        </span>
         <div class="product-item-footer">
           <div class="origins">
-            <span >
+            <span>
               {{ item.origin }}
             </span>
           </div>

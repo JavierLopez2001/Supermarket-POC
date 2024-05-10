@@ -7,7 +7,7 @@ describe('SnackbarService', () => {
   let matSnackBar: MatSnackBar;
 
   const mockMatSnackBar = {
-    open: () => {}
+    open: () => { }
   };
 
   beforeEach(() => {

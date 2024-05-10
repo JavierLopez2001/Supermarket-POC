@@ -45,7 +45,7 @@ export class ProductsService {
         });
       })
     );
- }
+  }
 
   delete(id: number): Observable<Product> {
     return this.http.delete<Product>(`${this.apiUrl}/${id}`).pipe(

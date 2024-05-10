@@ -17,7 +17,7 @@ describe('AppComponent', () => {
         AppComponent,
         HeaderComponent
       ],
-      imports:[
+      imports: [
         MatDialogModule,
         BrowserAnimationsModule,
         HttpClientTestingModule,
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
         RouterTestingModule
       ]
     })
-   .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

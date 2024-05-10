@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-// Mock del servicio SnackbarService
 class MockSnackbarService {
   showSnackBar = jasmine.createSpy('showSnackBar');
 }
@@ -26,7 +25,7 @@ describe('AddProductDialogComponent', () => {
     mockSnackbarService = new MockSnackbarService();
 
     await TestBed.configureTestingModule({
-      declarations: [ AddProductDialogComponent ],
+      declarations: [AddProductDialogComponent],
       imports: [
         MatDialogModule,
         FormsModule,
@@ -38,7 +37,7 @@ describe('AddProductDialogComponent', () => {
         { provide: SnackbarService, useValue: mockSnackbarService }
       ]
     })
-   .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
@@ -57,16 +56,16 @@ describe('AddProductDialogComponent', () => {
   });
 
   it('should show snackbar and not close the dialog when onSubmit is called with invalid data', () => {
-    mockSnackbarService.showSnackBar.and.callFake(() => {});
-    component.product = { name: '', price: 0.0, origin: '', time: '', image: '', favorite: false};
+    mockSnackbarService.showSnackBar.and.callFake(() => { });
+    component.product = { name: '', price: 0.0, origin: '', time: '', image: '', favorite: false };
     component.onSubmit();
     expect(mockSnackbarService.showSnackBar).toHaveBeenCalledWith("There are invalid fields");
     expect(mockDialogRef.close).not.toHaveBeenCalled();
   });
 
   it('should close the dialog with product data when onSubmit is called with valid data', () => {
-    mockSnackbarService.showSnackBar.and.callFake(() => {});
-    component.product = { name: 'Test Product', price: 10, origin: 'Test Origin', time: 'Test Time', image: 'Test Image', favorite: false};
+    mockSnackbarService.showSnackBar.and.callFake(() => { });
+    component.product = { name: 'Test Product', price: 10, origin: 'Test Origin', time: 'Test Time', image: 'Test Image', favorite: false };
     component.onSubmit();
     expect(mockDialogRef.close).toHaveBeenCalledWith(component.product);
   });

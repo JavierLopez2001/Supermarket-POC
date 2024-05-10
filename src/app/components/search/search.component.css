@@ -1,13 +1,13 @@
-div{
+div {
   display: flex;
   justify-content: center;
   margin-top: 3rem;
   margin-bottom: 1.5rem;
 }
 
-div input{
+div input {
   border-radius: 10rem 0 0 10rem;
-  border:none;
+  border: none;
   height: 2rem;
   width: 20rem;
   background-color: #f1f1f1;
@@ -17,7 +17,7 @@ div input{
   outline: none;
 }
 
-div button{
+div button {
   color: white;
   height: 4.4rem;
   width: 5rem;
@@ -29,7 +29,7 @@ div button{
   outline: none;
 }
 
-div button:hover{
+div button:hover {
   opacity: 1;
   cursor: pointer;
 }

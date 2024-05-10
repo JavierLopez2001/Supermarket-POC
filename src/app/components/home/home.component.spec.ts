@@ -24,7 +24,7 @@ describe('HomeComponent', () => {
       declarations: [HomeComponent,
         SearchComponent,
       ],
-      imports:[
+      imports: [
         MatProgressSpinnerModule,
         FormsModule
       ],
